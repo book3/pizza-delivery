@@ -4,12 +4,10 @@ from rest_framework.response import Response
 from .models import User
 from drf_yasg.utils import swagger_auto_schema
 from . import serializers
+from rest_framework.views import APIView
 
-class HelloAuthView(generics.GenericAPIView):
+class HelloAuthView(APIView):
 
-    def get_serializer_class(self):
-        pass
-    
     @swagger_auto_schema(operation_summary="Hello auth")
     def get(self, request):
         return Response(data={'messege': 'Hello Auth'}, status=status.HTTP_200_OK)
