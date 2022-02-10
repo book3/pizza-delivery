@@ -6,6 +6,9 @@ from drf_yasg.utils import swagger_auto_schema
 from . import serializers
 
 class HelloAuthView(generics.GenericAPIView):
+
+    serializer_class = None
+
     @swagger_auto_schema(operation_summary="Hello auth")
     def get(self, request):
         return Response(data={'messege': 'Hello Auth'}, status=status.HTTP_200_OK)
