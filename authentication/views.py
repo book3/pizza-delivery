@@ -7,7 +7,8 @@ from . import serializers
 
 class HelloAuthView(generics.GenericAPIView):
 
-    serializer_class = None
+    def get_serializer_class():
+        pass
 
     @swagger_auto_schema(operation_summary="Hello auth")
     def get(self, request):
